@@ -14,18 +14,18 @@ class RestaurantViewModel:ObservableObject{
     @Published var getProducts = GetProducts()
     
     func postGetProducts(id:String) async {
-      do {
+      Task {
           let body = ["restaurant": id, "area" : "gulshan", "platform": "app"] as [String : Any]
         let api = ApiService()
         let headers: [String: String]? = nil
-         getProducts = try await api.request(
+          let result:GetProducts = try await api.request(
             url:AppStrings.getProductsUrl, method: "POST",
             body: body, headers: headers)
           
-        
+          DispatchQueue.main.async {
+              self.getProducts = result
+          }
           
-      } catch {
-        print("Error fetching data: \(error)")
       }
     }
     
