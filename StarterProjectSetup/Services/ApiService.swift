@@ -9,21 +9,25 @@ import Foundation
 
 
 class ApiService {
-  func request<T>(url: String, method: String, body: Data? = nil, headers: [String: String]? = nil)
+    func request<T>(url: String, method: String, body:[String:Any]? = nil, headers: [String: String]? = nil)
     async throws -> T where T: Decodable
   {
     var request = URLRequest(url: URL(string: url)!)
-    if method == "POST" || method == "GET" {//you can check more method here.
+    if method == "POST" || method == "GET" { // you can check more method here.
       request.httpMethod = method
-      request.httpBody = body
-        
-//    request.allHTTPHeaderFields = headers
+        request.httpBody = body?.percentEncoded()
+    
         
       request.setValue("food", forHTTPHeaderField: "X-Parse-Application-Id")
       request.setValue("app", forHTTPHeaderField: "platform")
 
       let (data, response) = try await URLSession.shared.data(for: request)
-      guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+      guard let response = response as? HTTPURLResponse, response.statusCode == 200
+        
+     else {
+          print(response.self.description)
+          
+          
         throw CustomError.unexpected(code: 102)
       }
 
@@ -47,4 +51,28 @@ enum CustomError: Error {
 
     // Throw in all other cases
     case unexpected(code: Int)
+}
+
+
+extension Dictionary {
+    func percentEncoded() -> Data? {
+        map { key, value in
+            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
+            return escapedKey + "=" + escapedValue
+        }
+        .joined(separator: "&")
+        .data(using: .utf8)
+    }
+}
+
+extension CharacterSet {
+    static let urlQueryValueAllowed: CharacterSet = {
+        let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
+        let subDelimitersToEncode = "!$&'()*+,;="
+        
+        var allowed: CharacterSet = .urlQueryAllowed
+        allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
+        return allowed
+    }()
 }

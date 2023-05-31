@@ -14,18 +14,18 @@ class HomeViewModel:ObservableObject{
     @Published var homepageSection = HomepageSection()
     
     func postHomepageSection() async {
-      do {
-        let body: Data? = nil
+      Task {
+          let body:[String:String] = [:]
         let api = ApiService()
         let headers: [String: String]? = nil
-         homepageSection = try await api.request(
+          let result:HomepageSection = try await api.request(
             url:AppStrings.homepageSectionUrl, method: "POST",
           body: body, headers: headers)
-          print(homepageSection)
+          DispatchQueue.main.async {
+              self.homepageSection=result
+          }
         
           
-      } catch {
-        print("Error fetching data: \(error)")
       }
     }
 }
