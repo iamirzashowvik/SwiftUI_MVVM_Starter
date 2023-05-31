@@ -12,7 +12,7 @@ struct StarterProjectSetupApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                HomeView().navigationBarHidden(true)
+                SplashView().navigationBarHidden(true)
             }
         }
     }

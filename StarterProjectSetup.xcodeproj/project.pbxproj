@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AA144B22A2661A7000AE858 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144B12A2661A7000AE858 /* SplashView.swift */; };
+		7AA144B52A266429000AE858 /* AssetManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144B42A266429000AE858 /* AssetManagement.swift */; };
+		7AA144B72A266D9A000AE858 /* Sizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144B62A266D9A000AE858 /* Sizing.swift */; };
+		7AA144B92A267219000AE858 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144B82A267219000AE858 /* Size.swift */; };
+		7AA144BD2A2675B1000AE858 /* RestaurantCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144BC2A2675B1000AE858 /* RestaurantCardComponent.swift */; };
+		7AA144BF2A26761B000AE858 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144BE2A26761B000AE858 /* HomeViewModel.swift */; };
+		7AA144C22A26769B000AE858 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144C12A26769B000AE858 /* ApiService.swift */; };
+		7AA144C52A2677E4000AE858 /* HomepageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144C42A2677E4000AE858 /* HomepageSection.swift */; };
+		7AA144C92A2678B7000AE858 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA144C82A2678B7000AE858 /* AppStrings.swift */; };
 		7AF55FE92A2471E700D4244F /* StarterProjectSetupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF55FE82A2471E700D4244F /* StarterProjectSetupApp.swift */; };
 		7AF55FEB2A2471E700D4244F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF55FEA2A2471E700D4244F /* ContentView.swift */; };
 		7AF55FED2A2471E900D4244F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF55FEC2A2471E900D4244F /* Assets.xcassets */; };
@@ -18,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7AA144B12A2661A7000AE858 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		7AA144B42A266429000AE858 /* AssetManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManagement.swift; sourceTree = "<group>"; };
+		7AA144B62A266D9A000AE858 /* Sizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizing.swift; sourceTree = "<group>"; };
+		7AA144B82A267219000AE858 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		7AA144BC2A2675B1000AE858 /* RestaurantCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardComponent.swift; sourceTree = "<group>"; };
+		7AA144BE2A26761B000AE858 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7AA144C12A26769B000AE858 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		7AA144C42A2677E4000AE858 /* HomepageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageSection.swift; sourceTree = "<group>"; };
+		7AA144C82A2678B7000AE858 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		7AF55FE52A2471E700D4244F /* StarterProjectSetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarterProjectSetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF55FE82A2471E700D4244F /* StarterProjectSetupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterProjectSetupApp.swift; sourceTree = "<group>"; };
 		7AF55FEA2A2471E700D4244F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +58,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AA144AF2A26614E000AE858 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				7AA144B02A26618A000AE858 /* Views */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		7AA144B02A26618A000AE858 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AA144B12A2661A7000AE858 /* SplashView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AA144B32A26640E000AE858 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7AA144B42A266429000AE858 /* AssetManagement.swift */,
+				7AA144B62A266D9A000AE858 /* Sizing.swift */,
+				7AA144C82A2678B7000AE858 /* AppStrings.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7AA144BA2A267582000AE858 /* RestaurantCard */ = {
+			isa = PBXGroup;
+			children = (
+				7AA144BC2A2675B1000AE858 /* RestaurantCardComponent.swift */,
+			);
+			path = RestaurantCard;
+			sourceTree = "<group>";
+		};
+		7AA144C02A267681000AE858 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7AA144C12A26769B000AE858 /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7AA144C32A2677D2000AE858 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7AA144C42A2677E4000AE858 /* HomepageSection.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		7AF55FDC2A2471E700D4244F = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				7AF55FE82A2471E700D4244F /* StarterProjectSetupApp.swift */,
+				7AF55FF92A24758800D4244F /* Core */,
+				7AA144C02A267681000AE858 /* Services */,
 				7AF55FF62A24721600D4244F /* Extensions */,
 				7AF560042A247E6500D4244F /* Models */,
-				7AF55FF92A24758800D4244F /* Core */,
+				7AA144B32A26640E000AE858 /* Utils */,
 				7AF55FEA2A2471E700D4244F /* ContentView.swift */,
 				7AF55FEC2A2471E900D4244F /* Assets.xcassets */,
 				7AF55FEE2A2471E900D4244F /* Preview Content */,
@@ -82,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				7AF55FF72A24735500D4244F /* Color.swift */,
+				7AA144B82A267219000AE858 /* Size.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -90,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7AF560002A24770A00D4244F /* Components */,
+				7AA144AF2A26614E000AE858 /* Splash */,
 				7AF55FFB2A2475AA00D4244F /* Home */,
 			);
 			path = Core;
@@ -115,6 +187,7 @@
 		7AF55FFD2A2475C100D4244F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7AA144BE2A26761B000AE858 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -122,6 +195,7 @@
 		7AF560002A24770A00D4244F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7AA144BA2A267582000AE858 /* RestaurantCard */,
 				7AF560012A24772900D4244F /* CircleButtons */,
 			);
 			path = Components;
@@ -138,6 +212,7 @@
 		7AF560042A247E6500D4244F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7AA144C32A2677D2000AE858 /* Home */,
 				7AF560052A24816E00D4244F /* CoinModel.swift */,
 			);
 			path = Models;
@@ -215,10 +290,19 @@
 			files = (
 				7AF55FEB2A2471E700D4244F /* ContentView.swift in Sources */,
 				7AF55FFF2A2475E400D4244F /* HomeView.swift in Sources */,
+				7AA144B72A266D9A000AE858 /* Sizing.swift in Sources */,
+				7AA144C92A2678B7000AE858 /* AppStrings.swift in Sources */,
 				7AF560032A24773C00D4244F /* CircleButtonViews.swift in Sources */,
 				7AF55FE92A2471E700D4244F /* StarterProjectSetupApp.swift in Sources */,
 				7AF560062A24816E00D4244F /* CoinModel.swift in Sources */,
+				7AA144B92A267219000AE858 /* Size.swift in Sources */,
+				7AA144C52A2677E4000AE858 /* HomepageSection.swift in Sources */,
+				7AA144C22A26769B000AE858 /* ApiService.swift in Sources */,
+				7AA144BF2A26761B000AE858 /* HomeViewModel.swift in Sources */,
+				7AA144B52A266429000AE858 /* AssetManagement.swift in Sources */,
+				7AA144BD2A2675B1000AE858 /* RestaurantCardComponent.swift in Sources */,
 				7AF55FF82A24735500D4244F /* Color.swift in Sources */,
+				7AA144B22A2661A7000AE858 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

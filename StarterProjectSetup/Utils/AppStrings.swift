@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+struct AppStrings{
+    static let homepageSectionUrl = "https://api.munchies.com.bd/parse/functions/homepage"
+}

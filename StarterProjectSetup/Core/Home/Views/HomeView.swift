@@ -10,19 +10,42 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var showPort : Bool = false
+    @ObservedObject var homeViewModel = HomeViewModel()
     
     
     var body: some View {
-        ZStack{
+        ZStack(alignment: .top){
             // Background Layer
-            Color.theme.background.ignoresSafeArea()
+            Color.theme.accent.ignoresSafeArea()
             
             
             // Content Layer
-            VStack{
+            VStack(alignment: .leading){
                homeHeader
-                Spacer(minLength: 0)
+                VStack{
+                    if (homeViewModel.homepageSection.result != nil)  {
+                        List{
+                            ForEach(homeViewModel.homepageSection.result ?? [],id: \.id){ section in
+                                VStack(alignment: .leading){
+                                    Text(section.name!)
+                                    ScrollView(.horizontal) {
+                                                LazyHStack {
+                                                    ForEach(section.items ?? [], id: \.id) { restaurant in
+                                                       RestaurantCardComponent(restaurant: restaurant)
+                                                    }
+                                                }
+                                    }.frame( height:200)
+                                }
+                            }
+                        }.listStyle(.plain)
+                        
+                    }
+                }
+               
+               
             }
+        }.task {
+            await homeViewModel.postHomepageSection()
         }
     }
 }
@@ -38,16 +61,16 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView{
     private var homeHeader: some View{
         HStack{
-            CircleButtonViews(iconName: showPort ? "plus" : "info").animation(.none)
+            Image(systemName: "text.justify").foregroundColor(Color.white)
             Spacer()
-            Text("Header").font(.headline).foregroundColor(Color.theme.accent).fontWeight(.heavy)
-            Spacer()
-            CircleButtonViews(iconName: "chevron.right").rotationEffect(
-                Angle(degrees: showPort ? 180 : 0 )).onTapGesture {
-                withAnimation(.spring()){
-                    showPort.toggle()
-                }
+                .frame(width:  ConstSizing.lgPadding)
+            VStack(alignment: .leading){
+                Text("Deliver To").foregroundColor(Color.theme.cyan).bold()
+                Text("Lalbag, Dhaka").foregroundColor(Color.white)
             }
-        }
+            Spacer()
+            Image(systemName: "magnifyingglass").foregroundColor(Color.white)
+            
+        }.padding()
     }
 }

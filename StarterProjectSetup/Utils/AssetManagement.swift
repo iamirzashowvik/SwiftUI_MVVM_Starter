@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+struct Assets{
+   static var munchiesLogo:String = "munchiesLogo"
+}

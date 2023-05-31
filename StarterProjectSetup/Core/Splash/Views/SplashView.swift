@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State private var isShowingDetailView = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), isActive: $isShowingDetailView) { EmptyView() }
+            Color.theme.background.ignoresSafeArea()
+            Image(Assets.munchiesLogo).resizable().frame(width: 150,height: 150)
+        }.task {
+          sleep(2)
+            isShowingDetailView = true
+            
+            
+        }
     }
 }
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        NavigationView{
+            SplashView().navigationBarHidden(true).statusBarHidden(true)
+        }
     }
 }
