@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct StarterProjectSetupApp: App {
+    @StateObject private var cartController = CartController()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                SplashView().navigationBarHidden(true)
+                SplashView().navigationBarHidden(true).environment( \.managedObjectContext,cartController.container.viewContext)
             }
         }
     }

@@ -38,12 +38,12 @@ struct RestaurantView: View {
                                         ForEach(category.items ?? [],id:\.id){ item in
                                             ProductCard(product: item)
                                         }
-                                    }.background(Color.theme.background)
+                                    }//.background(Color.theme.background)
                                 }
                                 
-                            }.background(Color.theme.background)
-                        }
-                    }
+                            }
+                        }.scrollContentBackground(.hidden).listStyle(.plain)//.background(Color.theme.background)
+                    }//.background(Color.theme.background)
                 }
             }
         }
